@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        if(!localStorage.getItem("contador")){
+            localStorage.setItem("contador", 0)
+        }
+
+        let header = document.querySelector("h1")
+        header.innerHTML = localStorage.getItem("contador")
+
+        function atualizar(){
+            let contador = localStorage.getItem("contador")
+            contador++
+            localStorage.setItem("contador", contador)
+            header.innerHTML = contador
+        }
+
+        document.addEventListener("DOMContentLoaded", () => setInterval(atualizar, 300))
+        
+    </script>
+</body>
+</html>

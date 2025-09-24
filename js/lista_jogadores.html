@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de jogadores</h1>
+    <form id="formulario">
+        <input type="text" placeholder="jogador" id="jogador">
+        <button type="submit">enviar</button>
+    <ul>
+
+    </ul>
+    </form>
+    <script>
+        let form = document.getElementById("formulario")
+        formulario.addEventListener("submit", (event) => {
+            event.preventDefault()
+            let item = document.createElement("li")
+            item.innerText = document.getElementById("jogador").value
+            document.querySelector("ul").appendChild(item)
+        })
+        
+    </script>
+</body>
+</html>
